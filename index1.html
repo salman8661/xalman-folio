@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salman Faris P - Portfolio</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+            --dark-blue: #051937;
+            --light-blue: #008793;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        
+        .navbar-custom {
+            background: var(--dark-blue) !important;
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: rgb(255, 255, 255) !important;
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #a8eb12 !important;
+            transform: translateY(-2px);
+        }
+
+        
+        .hero-section {
+            background: var(--primary-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #d1d2cf;
+            margin-bottom: 2rem;
+        }
+
+        .hero-image {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-blue);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--light-blue);
+        }
+
+       
+        .about-section {
+            background: #f8f9fa;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+      
+        .skill-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: var(--light-blue);
+            margin-bottom: 1rem;
+        }
+
+        .progress {
+            height: 8px;
+            border-radius: 10px;
+        }
+
+        .progress-bar {
+            background: var(--primary-gradient);
+            width: 0; 
+            transition: width 2s ease;
+        }
+
+ 
+        .projects-section {
+            background: #f8f9fa;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 50px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+     
+        .contact-section {
+            background: var(--dark-blue);
+            color: white;
+        }
+
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 2px solid black;
+            
+           
+        }
+        .education-box{
+            position: relative;
+            left: 520px;
+            text-align: center;
+            width: 250px;
+            border: 2px solid black;
+        }
+ 
+        .contact-icon {
+            font-size: 2rem;
+            color: #a8eb12;
+            margin-bottom: 1rem;
+        }
+
+        .btn-custom {
+            background: var(--primary-gradient);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            color: white;
+        }
+
+      
+        .footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #a8eb12;
+        }
+
+    
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-image {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top" >
+        <div class="container">
+            <a class="navbar-brand" href="#home">Salman.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+         <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+            <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section id="home" class="hero-section">
+        <div class="container">
+   <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Hey! I'm <br><span style="color: #a8eb12;">Salman Faris</span></h1>
+                        <p class="hero-subtitle">Developer & Certified Penetration Tester in Cyber Security</p>
+                        <p class="text-white mb-4">Passionate about creating beautiful and functional web applications that solve real-world problems.</p>
+                <div>
+                            
+                            <a href="#contact" class="btn btn-outline-light">Get In Touch</a>
+                        </div>
+            </div>
+                </div>
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/dodaymessenger-2c64d.firebasestorage.app/o/profile_images%2Fsalman.jpg?alt=media&token=9360707b-f71d-46dc-bb87-5a6e98758045" alt="Salman Faris" class="hero-image">
+</div>
+            </div>
+            <div class="text-end mt-4" data-aos="fade-up" data-aos-delay="500" style="margin-right: 200px; margin-top: 190px;">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/salman-faris-2567a71b1"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/salman8661"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/xalmanfaris"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/xalmanfaris/"><i class="fab fa-instagram"></i></a>
+                </div>
+</div>
+    </section>
+
+   
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+<div class="row">
+        <div class="col-lg-8 mx-auto">
+                    <div class="about-text text-center" data-aos="fade-up" data-aos-delay="200">
+                        <p>I am currently learning coding at <strong>Bridgeon</strong> Solutions, where I am building a strong foundation in software development and problem-solving. Alongside coding, I have also verified my skills in cybersecurity by achieving the <strong>Certified Penetration Tester (CPT) </strong> I am passionate about exploring both development and security, aiming to grow as a well-rounded professional in the tech industry.</p>
+                        <p>When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community.</p>
+            </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+        
+
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="education-box">
+                 <h5><i class="fas fa-graduation-cap me-2"></i>Education</h5>
+                <p><strong></strong> Computer Science</p>
+                <p><strong>Certifications:</strong> CPT(Certified Penetration Tester)</p>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Skills</h2>
+            <div class="row">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="skill-item text-center">
+                        <div class="skill-icon">
+                            <i class="fab fa-html5"></i>
+                        </div>
+                <h5>HTML</h5>
+                        <p>HTML5<p>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" data-width="90%"></div>
+                              </div>
+                              <small>90%</small>
+            </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-item text-center">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h5>CSS</h5>
+                        <p>CSS,Bootstrap</p>
+                        <div class="progress mb-2">
+                            <div class="progress-bar" data-width="80%"></div>
+                        </div>
+                        <small>80%</small>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="skill-item text-center">
+                        <div class="skill-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h5>JAVASCRIPT</h5>
+                        <p>Javascript,Sql</p>
+                        <div class="progress mb-2">
+                            <div class="progress-bar" data-width="70%"></div>
+                        </div>
+                        <small>70%</small>
+                    </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <section id="projects" class="projects-section section-padding">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Projects</h2>
+    <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="project-card">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/dodaymessenger-2c64d.firebasestorage.app/o/profile_images%2FXqa2eepxsmdCJzFbkQMKK7dCFsi1%2Fprofile.jpg?alt=media&token=928f51db-2e61-4c03-b260-f662562aa402" alt="DoDay messenger" class="project-image">
+                        <div class="project-content">
+                            <h5>DoDay Messenger</h5>
+                         <p>DoDay Messenger is a modern cross-platform messaging application built with Firebase as the backend to deliver fast, reliable, and secure communication. The app supports real-time chat, voice and video calling, media sharing</p>
+                            <div class="d-flex justify-content-between">
+                                
+                            </div>
+                </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300" >
+                 <div class="project-card">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGQcUAUW4Oyx2jJYcYiW4ci1Usn7gII4HOzQ&s" height="300px"  alt="Task Management App" class="project-image">
+                        <div class="project-content">
+            
+                    <h5>W3 school nav bar clone</h5>
+                            <p>I created a W3Schools navigation bar clone using HTML and CSS as part of my learning journey. This project helped me understand the basics of HTML structure and CSS styling, and I’ve now started exploring more advanced concepts </p>
+                            <div class="d-flex justify-content-between">
+                                
+                            </div>
+                  </div>
+                    </div>
+              </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+              <div class="project-card">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/Booking.com_screenshot.jpg" alt="Analytics Dashboard" class="project-image">
+                        <div class="project-content">
+                        <h5>Booking.com</h5>
+                            <p>I recreated a few front pages of Booking.com using HTML and CSS during my learning practice. This project helped me improve my skills in page layout, responsive design, and styling then improved my skills.</p>
+                            <div class="d-flex justify-content-between">
+                                
+                            </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+          <h2 class="section-title text-white" data-aos="fade-up">Get In Touch</h2>
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              
+             
+                <form id="contactForm" class="p-4 rounded" style="background: rgba(255,255,255,0.1);" data-aos="fade-up" data-aos-delay="200">
+                    <div class="mb-3">
+                      <label for="name" class="form-label text-white">Your Name</label>
+                      <input type="text" class="form-control" id="name" name="from_name" placeholder="Enter your name" required style="border-radius: 60px;">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label text-white">Your Email</label>
+                      <input type="email" class="form-control" id="email" name="reply_to" placeholder="Enter your email" required style="border-radius: 60px;">
+                    </div>
+                    <div class="mb-3">
+                      <label for="message" class="form-label text-white">Message</label>
+                      <textarea class="form-control" id="message" name="message" rows="5" placeholder="Write your message..." required style="border-radius: 30px;"></textarea>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-custom">Send Email</button>
+                    </div>
+                  </form>
+      
+              
+              <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+                <div class="social-links">
+                  <a href="https://www.linkedin.com/in/salman-faris-2567a71b1"><i class="fab fa-linkedin"></i></a>
+                  <a href="https://github.com/salman8661"><i class="fab fa-github"></i></a>
+                  <a href="https://x.com/xalmanfaris"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.instagram.com/xalmanfaris/"><i class="fab fa-instagram"></i></a>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+ 
+    <footer class="footer" style="background-color: #000000;">
+        <div class="container">
+            <h3>Thank you for visiting my portfolio</h3>
+            <p><strong>FOR MORE DETAILS.</strong></p>
+            <p>📩xalmanfarisp@gmail.com</p>
+            <p>☎️+91 8157088589</p>
+            <p>&copy; 2025 Salman Faris P. All rights reserved.</p>
+            
+        </div>
+    </footer>
+
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+ 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.backgroundColor = 'rgba(5, 25, 55, 0.95)';
+            } else {
+                navbar.style.backgroundColor = 'var(--dark-blue)';
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const progressBars = document.querySelectorAll('.progress-bar');
+        
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bar = entry.target;
+                        const finalWidth = bar.getAttribute('data-width'); 
+                        bar.style.width = finalWidth; 
+                        observer.unobserve(bar); 
+                    }
+                });
+            }, { threshold: 0.5 });
+        
+            progressBars.forEach(bar => {
+                observer.observe(bar);
+            });
+        });
+        </script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function () {
+    emailjs.init("ZZdp8MQXZc_IDtVxT"); 
+  })();
+
+  function sendMail() {
+    var params = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+    };
+
+    const serviceID = "service_fta5tv8";   
+    const templateID = "template_t8hxm7j"; 
+
+    emailjs.send(serviceID, templateID, params)
+      .then((res) => {
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("message").value = "";
+        console.log(res);
+        alert(" Your message was sent successfully!😊");
+      })
+      .catch((err) => console.error(" Error:", err));
+  }
+
+  
+  document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    sendMail();
+  });
+</script>
+
+</body>
+</html>
